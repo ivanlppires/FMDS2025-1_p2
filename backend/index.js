@@ -6,9 +6,6 @@ import swagger from './config/swagger'
 
 const app = express();
 
-//Swagger
-swagger(app)
-
 //Middlewares
 app.use(express.json())
 app.use(cors())
@@ -16,6 +13,9 @@ app.use(log)
 
 // Rotas
 app.use('/students', StudentsRoutes)
+
+//Swagger
+swagger(app)
 
 //Put server to listen
 app.listen(5000, () => { console.log('Server running')})

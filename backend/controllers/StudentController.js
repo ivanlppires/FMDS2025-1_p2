@@ -4,7 +4,12 @@ import { connect } from 'bun'
 import connection from '../config/db'
 
 export const create = (req, res) => {
-    res.send('Estudante cadastrado')
+    const { name, email } = req.body;
+    const sql = "INSERT INTO students (name, email) VALUES (?, ?)";
+    connection.query(sql, [name, email], (error, result) => {
+        if(error) res.status(500).send(error);
+        else res.status(201).send({ message: 'Estudante criado com sucesso', id: result.insertId });
+    });
 }
 
 export const readOne = (req, res) => {

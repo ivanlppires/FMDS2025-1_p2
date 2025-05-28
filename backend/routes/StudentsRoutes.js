@@ -5,6 +5,45 @@ const router = express.Router();
 // Students CRUD
 
 // CREATE
+/**
+ * @swagger
+ * /students:
+ *   post:
+ *     summary: Cria um novo estudante
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: Nome do estudante
+ *               email:
+ *                 type: string
+ *                 description: Email do estudante
+ *     responses:
+ *       500:
+ *         description: Erro ao criar estudante
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string 
+ *       201:
+ *         description: Estudante criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ */
+
 router.post('/', controller.create);
 
 // READ
@@ -14,6 +53,15 @@ router.post('/', controller.create);
  *   get:
  *     summary: Retorna a relação de todos estudantes
  *     responses:
+ *       500:
+ *         description: Erro ao buscar estudantes
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
  *       200:
  *         description: Lista de estudantes
  *         content:
@@ -24,11 +72,11 @@ router.post('/', controller.create);
  *                 type: object
  *                 properties:
  *                   id:
- *                     type: integer (int4)
+ *                     type: integer
  *                   name:
  *                     type: string
- *                  email:
- *                    type: string
+ *                   email:
+ *                     type: string
  */
 router.get('/', controller.readAll);
 

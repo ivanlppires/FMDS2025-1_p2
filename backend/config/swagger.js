@@ -11,7 +11,7 @@ const options = {
             description: 'Documentação da API do Sistema Acadêmico - UNEMAT',
         },
     },
-    apis: ['../routes/*.js'],
+    apis: ['./routes/*.js'], // Ajuste conforme a estrutura do seu projeto
 };
 
 const specs = swaggerJsDoc(options);
