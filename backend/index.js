@@ -2,8 +2,12 @@ import express from 'express'
 import cors from 'cors'
 import log from './middleware/log'
 import StudentsRoutes from './routes/StudentsRoutes'
+import swagger from './config/swagger'
 
 const app = express();
+
+//Swagger
+swagger(app)
 
 //Middlewares
 app.use(express.json())

@@ -14,3 +14,9 @@ const options = {
     apis: ['../controllers/*.js'],
 };
 
+const specs = swaggerJsDoc(options);
+const swagger = (app) => {
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+};
+
+export default swagger;
