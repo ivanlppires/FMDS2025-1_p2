@@ -19,6 +19,9 @@ bun run index.js
 4. bun install mysql2
 5. bun install firebase-admin
 6. bun install dotenv
+7. bun install swagger-ui-express swagger-jsdoc
+
+# Swagger: https://github.com/swagger-api/swagger-ui
 
 ## Dev
 ### index.js
