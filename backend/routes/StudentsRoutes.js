@@ -8,7 +8,30 @@ const router = express.Router();
 router.post('/', controller.create);
 
 // READ
+/**
+ * @swagger
+ * /students:
+ *   get:
+ *     summary: Retorna a relação de todos estudantes
+ *     responses:
+ *       200:
+ *         description: Lista de estudantes
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer (int4)
+ *                   name:
+ *                     type: string
+ *                  email:
+ *                    type: string
+ */
 router.get('/', controller.readAll);
+
 router.get('/:id', controller.readOne)
 
 // UPDATE

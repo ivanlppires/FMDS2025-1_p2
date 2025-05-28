@@ -6,6 +6,7 @@ import connection from '../config/db'
 export const create = (req, res) => {
     res.send('Estudante cadastrado')
 }
+
 export const readOne = (req, res) => {
     const id = req.params.id
     const sql = "SELECT * FROM students WHERE id = " + id;
@@ -21,6 +22,7 @@ export const readAll = (req, res) => {
         else res.status(200).send(rows)
     })
 }
+
 export const update = (req, res) => {
     const id = req.params.id
     res.send('Atualizar o estudante ' + id)
